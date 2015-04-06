@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Score : MonoBehaviour {
+public class ScoreGUI : MonoBehaviour {
 
     public GUIText ScoreText;
-    private int _scoreAm;
+    private float _scoreAm;
 
 	// Use this for initialization
 	void Start ()
@@ -15,7 +15,7 @@ public class Score : MonoBehaviour {
 
     void AddScore()
     {
-        
+        _scoreAm +=  _scoreAm * Time.deltaTime;
     }
 
     void UpdateScore()
