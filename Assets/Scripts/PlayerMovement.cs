@@ -26,9 +26,9 @@ public class PlayerMovement : MonoBehaviour {
 	void Update ()
 	{
 	    float moveHorizontal = Input.GetAxis("Horizontal");
-	    float moveVertical = Input.GetAxis("Vertical");// Its here where the movement problem is happening when added to horizontal movement
+	  //float moveVertical = Input.GetAxis("Vertical");// Its here where the movement problem is happening when added to horizontal movement
 
-        movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
       
         rb.velocity = (movement * speed);
 	}
@@ -36,9 +36,9 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate()
     {
         rb.position = new Vector3(
-    Mathf.Clamp(rb.position.x, bounds.XMin, bounds.XMax), //x
-    0.0f,                                //y
-    Mathf.Clamp(rb.position.z, bounds.ZMin, bounds.ZMax) //z
-    );
+                                  Mathf.Clamp(rb.position.x, bounds.XMin, bounds.XMax), //x
+                                  0.0f,                                //y
+                                  0.0f //z
+                                  );
     }
 }
